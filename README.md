@@ -3,7 +3,7 @@ RIKEN's internal AI Inference Infrastructure for Scientific Computing and Genera
 
 ## Overview
 
-RiVault is a secure AI Inference infrastructure designed for scientific computing and general-purpose applications at RIKEN [1]. It provides users with multiple access methods to leverage powerful AI capabilities, including a web-based interface, API endpoints, and support for custom agentic systems.
+RiVault is a secure-first AI Inference infrastructure designed for scientific computing and general-purpose applications at RIKEN ([\[1\] Overview Slides](slides/RiVault-Intro-AI4Sci-system.pdf)). It provides users with multiple access methods to leverage powerful AI capabilities, including a web-based interface, API endpoints, and support for custom agentic systems.
 
 ## System Architecture
 
