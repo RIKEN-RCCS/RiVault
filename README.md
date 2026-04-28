@@ -1,2 +1,121 @@
 # RiVault
-A Secure AI Inference Infrastructure for Scientific Computing and General-purpose Applications at RIKEN
+RIKEN's internal AI Inference Infrastructure for Scientific Computing and General-purpose Applications
+
+## Overview
+
+RiVault is a secure AI Inference infrastructure designed for scientific computing and general-purpose applications at RIKEN [1]. It provides users with multiple access methods to leverage powerful AI capabilities, including a web-based interface, API endpoints, and support for custom agentic systems.
+
+## System Architecture
+
+The following diagram illustrates the RiVault setup and how users interact with its components:
+
+```mermaid
+flowchart TD
+    U[Users]
+    subgraph RiVault
+      W[WebUI]
+      R[RAG system, e.g. RAGFlow]
+      D[API Endpoints]
+      M[MCP Servers, e.g. Paper-Search]
+      M2[Tools, eg. search, compile, exec, OS usage, data retrival]
+      M3[Resources, eg. Internet, Knowledge bases, Compute]
+    
+      I[Interfacing via liteLLM]
+      I1[Inference Runtimes via vLLM, SGLang]
+    end
+    M1[MCP Package Manager]
+    M11[Bring-your-own-MCP]
+    I2[Model weights]
+    I21[huggingface]
+    I22[Bring-your-own-Model]
+    
+    A[User-facing agentic system]
+    A1[Agentic Frameworks; e.g. AgentZero, LangGraph]
+    A2[Agents/Skills]
+    O[onDemand RiVault]
+    S[Supercomputing Hardware]
+    
+    U --> A
+    U --> M
+    U --> D
+    U --> W
+    U --> R
+    U --> O
+    O --> D
+    I22 --> O
+    A --> A1
+    A1 --> A2
+    A2 --> D
+    A2 --> M
+    M --> M2
+    M1 --> M11
+    M11 --> W
+    M2 --> M3
+    D --> I
+    I --> I1
+    I2 --> I1
+    I21 --> I2
+    
+    W --> D
+    W --> M
+    
+    R --> D
+    R --> M
+    I1 --> S
+    M3 --> S
+```
+
+## Access Methods
+
+Users can interact with RiVault through several pathways:
+
+- **WebUI (W)**: A graphical web interface for direct interaction [1]
+- **API Endpoints (D)**: Programmatic access for integration into workflows
+- **MCP Servers (M)**: Model Context Protocol servers for extended functionality
+- **RAG System (R)**: Retrieval-Augmented Generation capabilities, e.g., RAGFlow
+- **onDemand RiVault (O)**: Custom deployments with bring-your-own models
+
+### WebUI Features
+
+The WebUI provides an intuitive control interface [1]:
+- **Left panel**: Access to previous chats and new chat creation
+- **Middle**: Dropdown menu to select model(s)
+- **Top-right**: Detailed configuration options for chats
+- **Bottom of chat**: Additional features including image generation, text-to-speech, rating, retry, and translations
+
+## MCP Servers
+
+RiVault supports MCP (Model Context Protocol) servers to extend functionality. Examples include [1]:
+
+- **papersearch**: Retrieves live paper information from arXiv, bioRxiv, and other scientific repositories
+- **time**: Provides time information
+
+Users can also bring their own MCP servers through the MCP Package Manager (M1 → M11).
+
+## Core Components
+
+### Inference Layer
+- **Interfacing**: Uses liteLLM for unified model access
+- **Inference Runtimes**: Powered by vLLM and SGLang for efficient model serving
+- **Model Weights**: Supports models from HuggingFace (I21) or custom bring-your-own models (I22)
+
+### Agentic Systems
+- **Frameworks**: Supports AgentZero, LangGraph, and other agentic frameworks
+- **Agents/Skills**: Custom agents that can access both APIs and MCP servers
+
+### Tools & Resources
+- **Tools Layer (M2)**: Provides search, compilation, execution, OS usage, and data retrieval capabilities
+- **Resources (M3)**: Connects to internet, knowledge bases, and compute resources
+- **Supercomputing Hardware (S)**: All computation runs on RIKEN's supercomputing infrastructure
+
+## Getting Started
+
+1. **Access the WebUI**: Navigate to the RiVault web interface to start chatting with models
+2. **Select a Model**: Use the dropdown in the middle of the interface to choose your preferred model [1]
+3. **Configure Settings**: Adjust parameters using the top-right configuration options [1]
+4. **Try MCP Servers**: Access extended functionality like paper search directly from the chat interface [1]
+5. **API Access**: Use API endpoints for programmatic integration into your workflows
+
+## Support
+
+For additional assistance or to deploy custom MCP servers and models, please refer to the documentation or contact the RiVault support team.
