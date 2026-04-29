@@ -5,6 +5,8 @@ RIKEN's internal AI Inference Infrastructure for Scientific Computing and Genera
 
 RiVault is a security-first AI Inference infrastructure designed for scientific computing and general-purpose applications at RIKEN ([\[1\] Overview Slides](slides/RiVault-Intro-AI4Sci-system.pdf)). It provides users with multiple access methods to leverage powerful AI models and capabilities, through a web-based interface, API endpoints, and support for custom agentic systems.
 
+Note: currently RiVault is only accessible from within RIKEN intranet. For [Rikyu](https://github.com/RIKEN-RCCS/Rikyu) (pre-)production, we plan to make it available more broadly.
+
 ## System Architecture
 
 The following diagram illustrates the RiVault setup and how users interact with its components:
