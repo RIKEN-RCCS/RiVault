@@ -101,6 +101,23 @@ Users can also bring their own MCP servers through the MCP Package Manager.
 - **Inference Runtimes**: Powered by vLLM and SGLang for efficient model serving
 - **Model Weights**: Supports models from HuggingFace or custom bring-your-own models
 
+### Currently deployed models
+- [meta-llama/Llama-4-Scout-17B-16E-Instruct](https://huggingface.co/meta-llama/Llama-4-Scout-17B-16E-Instruct) (context limit 100k)
+- [zai-org/GLM-4.7-FP8](https://huggingface.co/zai-org/GLM-4.7-FP8)
+- [deepseek-ai/DeepSeek-V4-Flash](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash)
+- [Qwen/Qwen3.6-27B-FP8](https://huggingface.co/Qwen/Qwen3.6-27B-FP8)
+- [Qwen/Qwen3.6-35B-A3B-FP8](https://huggingface.co/Qwen/Qwen3.6-35B-A3B-FP8)
+- google/translategemma-27b-it (translations)
+- Kimi-K2-Thinking  (context limit 32k, large thinking model)
+- K2-Think  (context limit 64k, midsize reasoning model)
+- codellama:7b  (fast coding model; good for code completions)
+- qwen3-coder:30b  (context limit 128k; midsize coding model; released 2025/07)
+- zai-org/GLM-4.7-Flash (context limit 200k; midsize coding model; released 2026/01)
+- qwen3:8b  (small / simple reasoning model)
+- gemma3:12b  (small / simple reasoning model)
+- llava:7b  (vision encoder)
+- bge-m3:567m  (embedding model)
+
 ### Agentic Systems
 - **Frameworks**: Supports AgentZero, LangGraph, and other agentic frameworks
 - **Agents/Skills**: Custom agents that can access both APIs and MCP servers
