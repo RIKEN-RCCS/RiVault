@@ -71,7 +71,7 @@ flowchart TD
 
 Users can interact with RiVault through several pathways:
 
-- **WebUI**: A graphical web interface for direct interaction [\[1\]](slides/RiVault-Intro-AI4Sci-system.pdf)
+- **WebUI**: A graphical [web interface](https://llm.ai.r-ccs.riken.jp/) for direct interaction [\[1\]](slides/RiVault-Intro-AI4Sci-system.pdf)
 - **API Endpoints**: Programmatic access for integration into workflows
 - **MCP Servers**: Model Context Protocol servers for extended functionality
 - **RAG System**: Retrieval-Augmented Generation capabilities, e.g., RAGFlow
